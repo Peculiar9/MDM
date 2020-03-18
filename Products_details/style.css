@@ -1,0 +1,50 @@
+body{
+    background-color: orange;
+}
+
+#cart-count{
+    color:white;
+    border-radius: 80%;
+    padding:3px;
+    width: 18px;
+    height: 20px;
+    font-size: 13px;
+    text-align: center;
+}
+
+
+.logo{
+    height: 60px;
+}
+
+nav{
+    box-shadow: 2px 3px 10px gray;
+    z-index: 10;
+}
+
+.underline{
+    border-bottom:3px solid white; 
+    padding-bottom: 10px;
+}
+
+.lead{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.price{
+    font-size: 30px;
+}
+
+.Addcart:hover{
+    background-color:black;
+    color:white!important;
+    border: none!important;
+}
+
+
+.buyNow:hover{
+    background-color:black;
+    color:white!important;
+    border: none!important;
+}
