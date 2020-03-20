@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     background-color: orange;
 }
@@ -19,4 +20,27 @@ nav{
 
 input:valid{
     border: 2px solid green;
+=======
+body{
+    background-color: orange;
+}
+
+
+.logo{
+    height: 60px;
+}
+
+nav{
+    box-shadow: 2px 3px 10px gray;
+    z-index: 10;
+}
+
+.wrapper{
+    box-shadow: 2px 2px 10px black;
+}
+
+
+input:valid{
+    border: 2px solid green;
+>>>>>>> commit
 }
