@@ -1,0 +1,72 @@
+body{
+    background-color: orange;
+}
+
+sub{
+    color:red;
+    font-weight: bolder;
+}
+
+.logo{
+    height: 60px;
+}
+
+nav{
+    box-shadow: 2px 3px 10px gray;
+    z-index: 10;
+}
+
+.Product-btn{
+    border-radius: 50px;
+    text-align: center;
+}
+
+.underline{
+    border-bottom:3px solid white; 
+    padding-bottom: 10px;
+}
+
+.card:hover{
+    box-shadow: 3px 3px 20px black;
+    transition: ease-in;
+    transition-duration: 0.2s;
+}
+
+
+@keyframes cart-move{
+    0%{
+        margin-left: 50px;
+    }
+
+    10%{
+        margin-left: 100px;
+    }
+
+    20%{
+        margin-left: 150px;
+    }
+
+    30%{
+        margin-left: 200px;
+    }
+
+}
+
+.movement{
+    animation: cart-move 2s infinite ; 
+}
+
+
+
+
+@media (min-width:300px) and  (max-width:399px){
+    .movement{
+        display: none;
+    }
+}
+
+@media (min-width:767px) and  (max-width:990px){
+    .card{
+        width: 25rem;
+    }
+}

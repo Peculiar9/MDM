@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
   <head>
@@ -452,4 +453,460 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
+=======
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../fontawesome/fontawesome/css/all.css">
+    <link rel="stylesheet" href="styles.css">
+
+
+    <title>MDM || Administrator Only </title>
+  </head>
+  <body> 
+<!-- 
+    Navbar starts  -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <a class="navbar-brand" href="#"><img src="../../HomePage/Logo.png" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto pl-5 mr-4">
+
+              
+            <li class="nav-item active ml-3">
+              <button class="btn btn-outline-warning"><a class="nav-link" href="../admin_Login.html" style="font-size:20px">Logout <span class="sr-only">(current)</span></a></button>
+            </li>
+
+            
+          </ul>
+
+        </div>
+      </nav>
+<br>
+<br>
+<br>
+<br>
+<!-- Navbar ends -->
+<br>
+
+
+<div class="container mt-5">
+	
+    <marquee><h6> <span class="payment-section-tag px-4 py-1 text-white"> ADMIN IS FREE TO EDIT AND MODIFY THE WEBSITE FROM HERE </span></h6></marquee>
+        
+    
+    
+    <div class="border border-dark wrapper">
+
+<!-- Registration nav-bar -->
+
+                    <div class="nav  flex-column flex-md-row ml-4 mr-auto mt-5">
+
+                   <a class="nav-link btn btn-dark text-white active mb-2" href="#section-1" data-toggle="tab"><span class="sections px-2" id="sect-1">ADD NEW PRODUCT</span></a>
+
+                    <a class=" nav-link btn btn-dark ml-3 text-white mb-2" href="#section-2" data-toggle="tab"><span class="sections px-2 " id="sect-2" >PRODUCTS</span></a>
+
+                  <a  class=" nav-link btn btn-dark ml-3 text-white mb-2" href="#section-3" data-toggle="tab"><span class="sections px-2 " id="sect-3">USERS</span></a>
+
+                  <a  class=" nav-link btn btn-dark ml-3 text-white mb-2" href="#section-4" data-toggle="tab"><span class="sections px-2" id="sect-4" >PENDING ORDERS </span></a>
+
+                  <a  class=" nav-link btn btn-dark ml-3 text-white mb-2" href="#section-5" data-toggle="tab"><span class="sections px-2" id="sect-5" > COMPLETED ORDERS </span></a>
+                  <a  class=" nav-link btn btn-dark ml-3 text-white mb-2" href="#section-5" data-toggle="tab"><span class="sections px-2" id="sect-5" >SECTION 6</span></a>
+                    </div>
+
+
+<div class="tab-content py-4">
+
+  
+<!-- first tab-->
+<div class="tab-pane active ml-4 mr-4" id="section-1">
+
+    <h5 class="mt-4 text-dark">  ADD NEW PRODUCT TO THE STOCK </h5>
+    <br>
+<form onSubmit="return Formsubmit();">
+  <div class="form-row">
+  <label for="product_name"> Product Name <span style="color: red;"><b>*</b></span></label>
+   <input type="text"class="form-control" id="product_name"  required
+         oninvalid="this.setCustomValidity('Please Enter the product name!')"
+         oninput="this.setCustomValidity('')"/>
+     </div>
+
+     <br>
+
+     <div class="form-row">
+  <label for="product_price"> Price <span style="color: red;"><b>*</b></span></label>
+   <input type="number"  class="form-control" id="product_price"  required 
+         oninvalid="this.setCustomValidity('Please Enter the product price')"
+         oninput="this.setCustomValidity('')"/>
+     </div>
+
+     <br>
+
+     <div class="form-row">
+      <label for="Product_image"> Upload Product Image <span style="color: red;"><b>*</b></span></label>
+       <input type="file" class="form-control"  id="Product_image"  required 
+       oninvalid="this.setCustomValidity('Please upload the product image')"
+        oninput="this.setCustomValidity('')">
+         </div>
+
+     <br>
+
+     <div class="form-row">
+      <label for="Product_desc">Product Description <span style="color: red;"><b>*</b></span></label>
+       <input type="text-box" style="height: 100px" class="form-control"  id="Product_desc"  required 
+       oninvalid="this.setCustomValidity('State the Product description')"
+        oninput="this.setCustomValidity('')">
+         </div>
+
+         <br>
+
+     <div class="form-row">
+  <label for="quantity">Available quantity<span style="color: red;"><b>*</b></span></label>
+   <input type="text" class="form-control" id="quantity"  required
+         oninvalid="this.setCustomValidity('What is the Available quantity?')"
+         oninput="this.setCustomValidity('')"/>
+     </div>
+
+  <br>
+  <br>
+
+<button class="btn btn-outline-dark d-block m-auto" type="submit">SUBMIT</button>
+</form>
+</div>
+
+
+
+<!-- second tab-->
+<div class="tab-pane ml-4 mr-4" id="section-2">
+<h5 class="mt-4 text-dark">  PRODUCTS TABLE  </h5>
+<br>
+
+    
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"> ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">PRICE</th>
+            <th scope="col" class="text-center">AVAILABLE QTY</th>
+            <th scope="col"> IMAGE</th>
+            <th scope="col" >ACTION</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">000001</th>
+            <td>Shoe</td>
+            <td>#5000</td>
+            <td class="text-center">20</td>
+            <td>From Database</td>
+            <td><button class="btn btn-danger"  id="delete">Delete</button> <button class="btn btn-dark mt-1s" disabled>Update</button></td>
+          </tr>
+          <tr>
+            <th scope="row">000002</th>
+            <td>Shirt</td>
+            <td>#4500</td>
+            <td class="text-center">5</td>
+            <td>From Database</td>
+            <td><button class="btn btn-danger"  id="delete">Delete</button> <button class="btn btn-dark mt-1" disabled>Update</button></td>
+          </tr>
+          <tr>
+              <th scope="row">000003</th>
+              <td>Gown</td>
+              <td>#4500</td>
+              <td class="text-center">5</td>
+              <td >From Database</td>
+              <td><button class="btn btn-danger"  id="delete">Delete</button> <button class="btn btn-dark mt-1" disabled>Update</button></td>  
+          </tr>
+
+          <tr>
+              <th scope="row">000003</th>
+              <td>Gown</td>
+              <td>#4500</td>
+              <td class="text-center">5</td>
+              <td>From Database</td>
+              <td><button class="btn btn-danger"  id="delete">Delete</button> <button class="btn btn-dark mt-1" disabled>Update</button></td>  
+          </tr>
+
+          <tr id="last-row">
+              <th scope="row">000003</th>
+              <td>Gown</td>
+              <td>#4500</td>
+              <td class="text-center">5</td>
+              <td>From Database</td>
+              <td><button class="btn btn-danger"  id="delete" >Delete</button> <button class="btn btn-dark mt-1" disabled>Update</button></td>  
+          </tr>
+
+        </tbody>
+      </table>
+
+</div>
+
+
+
+<!--third tab-->
+<div class="tab-pane ml-4 mr-4" id="section-3">
+    <h5 class="mt-4 text-dark">  USERS TABLE  </h5>
+    <br>
+    
+        
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col"> S/N</th>
+                <th scope="col">NAME</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col" class="text-center">No. of COMPLETED ORDER</th>
+                <th scope="col" class="text-center"> No. of UNCOMPLETED ORDER</th>
+                <th scope="col" class="text-center">ACTION</th>
+    
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">000001</th>
+                <td>Adeyemi Segun Ayodeji</td>
+                <td>Aoluwasegun009@gmail.com</td>
+                <td class="text-center">500</td>
+                <td class="text-center">10</td>
+                <td><button class="btn btn-danger"  id="delete">Delete User</button></td>
+              </tr>
+              <tr>
+                <th scope="row">000002</th>
+                <td>Feranmi Gideon </td>
+                <td>Ferami999@gmail.com</td>
+                <td class="text-center">234</td>
+                <td class="text-center">34</td>
+                <td><button class="btn btn-danger"  id="delete">Delete User</button></td>
+              </tr>
+              <tr>
+                <th scope="row">000002</th>
+                <td>Azeez Winsome </td>
+                <td>Winsomei999@gmail.com</td>
+                <td class="text-center">234</td>
+                <td class="text-center">34</td>
+                <td><button class="btn btn-danger"  id="delete">Delete User</button></td>
+              </tr>
+    
+              <tr>
+                <th scope="row">000002</th>
+                <td>Kehinde </td>
+                <td>Kenny9@gmail.com</td>
+                <td class="text-center">234</td>
+                <td class="text-center">34</td>
+                <td><button class="btn btn-danger"  id="delete">Delete User</button></td>
+              </tr>
+    
+              <tr>
+                <th scope="row">000002</th>
+                <td>Akinola Ganiyat </td>
+                <td>Ganiyta@gmail.com</td>
+                <td class="text-center">234</td>
+                <td class="text-center">34</td>
+                <td><button class="btn btn-danger"  id="delete">Delete User</button></td>
+              </tr>
+    
+            </tbody>
+          </table>
+    
+    </div>
+
+
+
+    <!--four tab-->
+<div class="tab-pane ml-4 mr-4" id="section-4">
+  <h5 class="mt-4 text-dark">  PENDING ORDERS TABLE  </h5>
+  <br>
+  
+      
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"> S/N</th>
+              <th scope="col">PRODUCT ID</th>
+              <th scope="col">PRODUCT NAME</th>
+              <th scope="col" class="text-center">USERS EMAIL</th>
+              <th scope="col" class="text-center"> DESTINATION ADDRESS</th>
+              <th scope="col" class="text-center">QUANTITY </th>
+              <th scope="col" class="text-center">TOTAL PRICE</th>
+              <th scope="col" class="text-center">STATUS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">000001</th>
+              <td>629838</td>
+              <td>Night Robe</td>
+              <td class="text-center">Aoluwasegun009@gmail.com</td>
+              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
+              <td class="text-center">3</td>
+              <td class="text-center">#15,600</td>
+              <td><button class="btn btn-warning"  id="delete">Awaiting Confirmation</button></td>
+            </tr>
+            <tr>
+              <th scope="row">000002</th>
+              <td>629823</td>
+              <td>Night Gown</td>
+              <td class="text-center">Feranmi999@gmail.com</td>
+              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
+              <td class="text-center">3</td>
+              <td class="text-center">#15,600</td>
+              <td><button class="btn btn-warning"  id="delete">Awaiting Confirmation</button></td>
+            </tr>
+            <tr>
+              <th scope="row">000003</th>
+              <td>629458</td>
+              <td>T-Shirt</td>
+              <td class="text-center">Kenny9@gmail.com</td>
+              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
+              <td class="text-center">3</td>
+              <td class="text-center">#15,600</td>
+              <td><button class="btn btn-warning"  id="delete">Awaiting Confirmation</button></td>
+            </tr>
+  
+            <tr>
+              <th scope="row">000004</th>
+              <td>629838</td>
+              <td>Night Robe</td>
+              <td class="text-center">Aoluwasegun009@gmail.com</td>
+              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
+              <td class="text-center">3</td>
+              <td class="text-center">#15,600</td>
+              <td><button class="btn btn-warning"  id="delete">Awaiting Confirmation</button></td>
+            </tr>
+  
+            <tr>
+              <th scope="row">000005</th>
+              <td>629838</td>
+              <td>Night Robe</td>
+              <td class="text-center">Aoluwasegun009@gmail.com</td>
+              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
+              <td class="text-center">3</td>
+              <td class="text-center">#15,600</td>
+              <td><button class="btn btn-warning"  id="delete">Awaiting Confirmation</button></td>
+  
+          </tbody>
+        </table>
+  
+  </div>
+
+
+  <!--five tab-->
+<div class="tab-pane ml-4 mr-4" id="section-5">
+  <h5 class="mt-4 text-dark">  COMPLETED ORDERS TABLE  </h5>
+  <br>
+  
+      
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"> S/N</th>
+              <th scope="col">PRODUCT ID</th>
+              <th scope="col">PRODUCT NAME</th>
+              <th scope="col" class="text-center">USERS EMAIL</th>
+              <th scope="col" class="text-center"> DESTINATION ADDRESS</th>
+              <th scope="col" class="text-center">QUANTITY </th>
+              <th scope="col" class="text-center">TOTAL PRICE</th>
+              <th scope="col" class="text-center">STATUS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">000001</th>
+              <td>629838</td>
+              <td>Night Robe</td>
+              <td class="text-center">Aoluwasegun009@gmail.com</td>
+              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
+              <td class="text-center">3</td>
+              <td class="text-center">#15,600</td>
+              <td><button class="btn btn-success"  id="delete">Confirmed</button></td>
+            </tr>
+            <tr>
+              <th scope="row">000001</th>
+              <td>629838</td>
+              <td>Night Robe</td>
+              <td class="text-center">Aoluwasegun009@gmail.com</td>
+              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
+              <td class="text-center">3</td>
+              <td class="text-center">#15,600</td>
+              <td><button class="btn btn-success"  id="delete">Confirmed</button></td>
+            </tr>
+            <tr>
+              <th scope="row">000001</th>
+              <td>629838</td>
+              <td>Night Robe</td>
+              <td class="text-center">Aoluwasegun009@gmail.com</td>
+              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
+              <td class="text-center">3</td>
+              <td class="text-center">#15,600</td>
+              <td><button class="btn btn-success"  id="delete">Confirmed</button></td>
+            </tr>
+  
+            <tr>
+              <th scope="row">000001</th>
+              <td>629838</td>
+              <td>Night Robe</td>
+              <td class="text-center">Aoluwasegun009@gmail.com</td>
+              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
+              <td class="text-center">3</td>
+              <td class="text-center">#15,600</td>
+              <td><button class="btn btn-success"  id="delete">Confirmed</button></td>
+            </tr>
+  
+            <tr>
+              <th scope="row">000001</th>
+              <td>629838</td>
+              <td>Night Robe</td>
+              <td class="text-center">Aoluwasegun009@gmail.com</td>
+              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
+              <td class="text-center">3</td>
+              <td class="text-center">#15,600</td>
+              <td><button class="btn btn-success"  id="delete">Confirmed</button></td>
+          </tbody>
+        </table>
+  
+  </div>
+    
+
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+>>>>>>> commit
 </html>
