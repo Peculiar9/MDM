@@ -2,53 +2,25 @@
 require_once('include/db.php');
 require_once('include/functions.php');
 require_once('include/session.php');
-
-
 ?>
-
 <?php 
 $getid = $_GET['id'];
 $sql = "SELECT * FROM category WHERE id='$getid'";
 $stmt = $connecting->query($sql);
 while ($data = $stmt->fetch()){
-  $id = $data['id'];
+    $id = $data['id'];
     $title = $data['title'];
     $product_name = $data['product_name'];
     // $category = $data['category'];
     $image = $data['image'];
     $price = $data['price'];
     $product_desc = $data['product_description'];
+    $product_name = $data['product_name'];
 }
-
+?>
+<?php
 $_SESSION['TrackingURL'] = $_SERVER['PHP_SELF'];
 Confirm_login_for_user(); 
-
-if(isset($_POST['addtocart'])){
-  if(isset($_SESSION['shopping_cart'])){
-      $item_array_id = array_column($_SESSION['shopping_cart'], "item_id");
-      if(!in_array($_GET['id'], $item_array_id)){
-          $count = count($_SESSION['shopping_cart']);
-          $item_array = array(
-            'item_id' => $_GET['id'],
-            'item_name' => $_POST['product'],
-            'item_price' => $_POST['price'],
-            'item_quantity' => $_POST['quantity'],
-          );
-          $_SESSION['shopping_cart'][$count] = $item_array;  
-      }else{
-          echo '<script>alert("Item Already added")</script>';
-          echo '<script>window.location="index.php"</script>';
-      }
-  }else{
-    $item_array = array(
-      'item_id' => $_GET['id'],
-      'item_name' => $_POST['product'],
-      'item_price' => $_POST['price'],
-      'item_quantity' => $_POST['quantity'],
-    );
-    $_SESSION['shopping_cart'][0] = $item_array;
-  }
-}
 ?>
 <!doctype html>
 <html lang="en">
@@ -102,10 +74,10 @@ if(isset($_POST['addtocart'])){
             </li>
 
             <li class="nav-item mr-3">
-              <a href="#" class="nav-link" data-toggle="modal" data-target="#cart_container">
-                <i class="fas fa-cart-plus"></i> Cart<span class="badge bg-primary">0</span>
-                  </a>
-                </li>
+                            <a href="cart.php" class="nav-link">
+                                <i class="fas fa-cart-plus"></i> Cart
+                            </a>
+                        </li>
           </ul>
 
         </div>
@@ -135,6 +107,7 @@ if(isset($_POST['addtocart'])){
     //  $category = $data['category'];
      $image = $data['image'];
      $price = $data['price'];
+     $product_name = $data['product_name'];
      $product_desc = $data['product_description'];
  }
  ?>
@@ -166,7 +139,7 @@ if(isset($_POST['addtocart'])){
                         </a>
                       </div>
                 </div>
-    <form method="post" action="viewdetails.php?action=add&id=<?php echo $getid; ?>">
+    <form>
                 <div class="container">
                   <div class="row justify-content-center">
                 <div class=" mt-5">
@@ -194,13 +167,13 @@ if(isset($_POST['addtocart'])){
 
         <div class="col-md-6 d-block m-auto">
             <div>
-            <p style="font-size:34px;" class="lead price text-center mt-3" name="price" ><?php echo htmlentities($price);?></p>
+            <p style="font-size:34px;" class="lead price text-center mt-3" name="price" >N<?php echo htmlentities($price);?></p>
                 <h4 class="text-white font-weight-bold mt-4 text-center" name="product"><?php echo htmlentities($product_name);?></h4>
-                <p class="text-white mt-5"><?php echo htmlentities($product_desc);?></p>
+                <p style="text-align:center;font-size:30px;" class="text-white mt-5"><?php echo htmlentities($product_desc);?></p>
                 <!-- <button class="btn btn-light text-warning p-3 Addcart Product-btn mt-3 d-block m-auto" id="add-to-cart"> <b>Add to cart</b></button> <br> -->
-                <input type="submit" name="addtocart" class="btn btn-light p-3 Product-btn mt-3 d-block m-auto mb-2" value="Add to Cart" /> <br>
+                <a style="width:120px;text-align:center;" href="process_cart.php?product_name=<?php echo $product_name?>&price=<?php echo $price;?>" class="btn btn-light p-3 Product-btn mt-3 d-block m-auto mb-2">Add to Cart</a> <br>
                 <!-- <button class="btn btn-outline-light text-dark buyNow p-3 Product-btn ml-3 mt-3 d-block m-auto"> <b>Buy Now</b></button> -->
-                <input type="submit" name="checkout" class="btn btn-light p-3 Product-btn mt-3 d-block m-auto mb-2" value="Checkout" />
+                <a style="width:120px;text-align:center;" class="btn btn-light p-3 Product-btn mt-3 d-block m-auto mb-2" href="checkout.php">CheckOut</a>
             </div>
         </div>
 
@@ -250,74 +223,8 @@ if(isset($_POST['addtocart'])){
 
 
 
-  <div class="modal fade text-dark" id="cart_container">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title lead"><h2>Cart</h2></h5>
-
-                        <button class="close" data-dismiss="modal">
-                            <span>&times;</span>
-                        </button>
-                    </div>
-              
-                    <div class="modal-body">
-                      <div class="row">
-						<div class="col-md-4">S/N
-            </div>
-						<div class="col-md-4">Product Name</div>
-						<div class="col-md-4">Price in ₦</div>
-              <!-- <div class="table responsive">
-               <table class="table table-bordered">
-                 <tr> 
-                  <th width="40%">Item Name</th>
-                  <th width="10%">Quantity</th>
-                  <th width="20%">Price</th>
-                  <th width="15%">Total</th>
-                  <th width="5%">Action</th>
-                  </tr>
-                 
-
-                  <tr>
-                   <td><?php// echo $values['item_name']; ?></td>
-                   <td><?php //echo $values['item_quantity']; ?></td>
-                   <td>N <?php //echo $values['item_price'];?></td>
-                   <td><?php //echo $values['item_price'] * $values['item_quantity'];?></td>
-                   <td><a href="index.php?action=delete&id=<?php //echo $values['item_id'];?>"><span class="text-danger">Remove</span></a></td>
-                   </tr>
-                   <?php 
-                  //  $total = $total + ($values['item_price'] * $values['item_quantity']);
-                   // }
-                    ?> 
-                    <tr>
-                    <td colspan="3" align="right">Total</td>
-                    <td align="right">N //<?php// echo $total; ?></td>
-                    </tr>
-                    <?php
-                    // }
-                    ?>  
-                  </table> -->
-                  
-              </div>
-					</div>
-					 <hr>
-                        <!-- <div id="cart_product">
-						
-								<div class="row">
-									<div class="col-md-3">Sl.No</div>
-									<div class="col-md-3">Product Image</div>
-									<div class="col-md-3">Product Name</div>
-									<div class="col-md-3">Price in $.</div>
-								</div>
-						</div> --> 
-					
-						<div class="panel-footer"></div>
-						
-						<br>
-						
-                      </div>
-                      <hr>
-                    </div>
+  
+  
 
 
 
