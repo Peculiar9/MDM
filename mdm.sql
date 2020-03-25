@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2020 at 11:11 PM
+-- Generation Time: Mar 25, 2020 at 09:44 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -44,29 +44,6 @@ INSERT INTO `admin_entity` (`id`, `username`, `pass_word`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
---
-
-CREATE TABLE `cart` (
-  `id` int(10) NOT NULL,
-  `p_id` int(10) NOT NULL,
-  `ip_add` varchar(250) NOT NULL,
-  `user_id` int(10) DEFAULT NULL,
-  `qty` int(10) NOT NULL,
-  `uniq_id` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id`, `p_id`, `ip_add`, `user_id`, `qty`, `uniq_id`) VALUES
-(41, 1, '::1', 7, 1, '5e738650e6b62'),
-(42, 4, '::1', 7, 1, '5e738650e6b62');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `category`
 --
 
@@ -85,15 +62,15 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `title`, `image`, `product_name`, `price`, `product_description`, `available`) VALUES
-(10, 'Shirtandgowns', 'cloth_2.jpg', 'Polo Shirt', '#1500', 'GOOD PRODUCT', '5'),
-(11, 'Cardigan', 'children1.jpg', 'Kids Cardigan', '#2500', 'GOOD PRODUCT', '1'),
-(12, 'Sneakersandcaps', 'arrivel_1.png', 'Unisex Cap', '#2000', 'GOOD PRODUCT', '2'),
-(13, 'Sneakersandcaps', 'arrivel_5.png', 'Nice Sneakers', '#1200', 'GOOD PRODUCT', '2'),
-(14, 'Cardigan', 'arrivel_4.png', 'Long Sleeve Cardigan', '#1200', 'GOOD PRODUCT', '4'),
-(15, 'Shirtandgowns', 'arrivel_21.png', 'Men T-shirt', '#3500', 'GOOD PRODUCT', '2'),
-(16, 'Shirtandgowns', 'arrivel_3.png', 'Shirts', '#5000', 'GOOD PRODUCT', '4'),
-(17, 'Sneakersandcaps', 'hero_1.png', 'White Sneakers', '#10000', 'VERY GOOD PRODUCT', '4'),
-(18, 'Cardigan', 'children.jpg', 'Adult Cardigans', '#4000', 'ANOTHER GOOD PRODUCT', '4');
+(10, 'Shirtandgowns', 'cloth_2.jpg', 'Polo Shirt', '1500', 'GOOD PRODUCT', '5'),
+(11, 'Cardigan', 'children1.jpg', 'Kids Cardigan', '2500', 'GOOD PRODUCT', '1'),
+(12, 'Sneakersandcaps', 'arrivel_1.png', 'Unisex Cap', '2000', 'GOOD PRODUCT', '2'),
+(13, 'Sneakersandcaps', 'arrivel_5.png', 'Nice Sneakers', '1200', 'GOOD PRODUCT', '2'),
+(14, 'Cardigan', 'arrivel_4.png', 'Long Sleeve Cardigan', '1200', 'GOOD PRODUCT', '4'),
+(15, 'Shirtandgowns', 'arrivel_21.png', 'Men T-shirt', '3500', 'GOOD PRODUCT', '2'),
+(16, 'Shirtandgowns', 'arrivel_3.png', 'Shirts', '5000', 'GOOD PRODUCT', '4'),
+(17, 'Sneakersandcaps', 'hero_1.png', 'White Sneakers', '10000', 'VERY GOOD PRODUCT', '4'),
+(18, 'Cardigan', 'children.jpg', 'Adult Cardigans', '4000', 'ANOTHER GOOD PRODUCT', '4');
 
 -- --------------------------------------------------------
 
@@ -118,26 +95,27 @@ INSERT INTO `category_list` (`id`, `title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `plus2_cart_products`
+-- Table structure for table `shipping_details`
 --
 
-CREATE TABLE `plus2_cart_products` (
-  `p_id` int(3) NOT NULL,
-  `p_name` varchar(100) NOT NULL,
-  `price` decimal(5,2) NOT NULL,
-  `img` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `shipping_details` (
+  `id` int(11) NOT NULL,
+  `fandl` varchar(100) NOT NULL,
+  `add_ress` varchar(150) NOT NULL,
+  `postal` varchar(20) NOT NULL,
+  `city` varchar(20) NOT NULL,
+  `state_city` varchar(20) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `sta_tus` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `plus2_cart_products`
+-- Dumping data for table `shipping_details`
 --
 
-INSERT INTO `plus2_cart_products` (`p_id`, `p_name`, `price`, `img`) VALUES
-(1, 'Banana', '20.34', 'banana.jpg'),
-(2, 'Cherry', '12.45', 'cherry.jpg'),
-(3, 'Pear', '22.34', 'pear.jpg'),
-(4, 'Strawberry', '20.12', 'strawberry.jpg'),
-(5, 'Watermelon', '12.34', 'watermelon.jpg');
+INSERT INTO `shipping_details` (`id`, `fandl`, `add_ress`, `postal`, `city`, `state_city`, `phone`, `sta_tus`) VALUES
+(1, 'ekf', ' efeg', '555', 'eegg', 'eegeg', '6515', 'ON'),
+(2, 'Me and you', ' Behind myself', '201554', 'ibadan', 'Oyo state', '08545265256', 'ON');
 
 -- --------------------------------------------------------
 
@@ -175,12 +153,6 @@ ALTER TABLE `admin_entity`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `cart`
---
-ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
@@ -193,10 +165,10 @@ ALTER TABLE `category_list`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `plus2_cart_products`
+-- Indexes for table `shipping_details`
 --
-ALTER TABLE `plus2_cart_products`
-  ADD PRIMARY KEY (`p_id`);
+ALTER TABLE `shipping_details`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user_entity`
@@ -215,12 +187,6 @@ ALTER TABLE `admin_entity`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `cart`
---
-ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
-
---
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
@@ -233,10 +199,10 @@ ALTER TABLE `category_list`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `plus2_cart_products`
+-- AUTO_INCREMENT for table `shipping_details`
 --
-ALTER TABLE `plus2_cart_products`
-  MODIFY `p_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `shipping_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_entity`
