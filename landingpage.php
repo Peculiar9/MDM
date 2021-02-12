@@ -65,10 +65,9 @@ Confirm_login_for_user();
             </li>
 
             <li class="nav-item mr-3">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#cart_container">
-                                <i class="fas fa-cart-plus"></i> Cart<span class="badge bg-primary">0</span>
-                            </a>
-                        </li>
+                <a href="cart.php" class="nav-link">
+                 <i class="fas fa-cart-plus"></i> Cart</a>
+              </li>
             <li class="nav-item active ml-3">
               <a class="nav-link" href="logout.php">
                 Logout &nbsp;<i class="fa fa-user"></i>

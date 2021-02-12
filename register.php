@@ -51,7 +51,7 @@ if (isset($_POST['submit'])){
         // var_dump($execute);
         if ($execute){
             $_SESSION["SuccessMessage"] = "Account Created Successfully"; 
-            Redirect_to('index.php');
+            Redirect_to('landingpage.php');
         }else{
             $_SESSION["ErrorMessage"] = "Something went wrong. Try Again!"; 
             Redirect_to('register.php');

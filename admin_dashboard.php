@@ -337,69 +337,39 @@ if (isset($_POST['submit'])){
           <thead>
             <tr>
               <th scope="col"> S/N</th>
-              <th scope="col">PRODUCT ID</th>
-              <th scope="col">PRODUCT NAME</th>
-              <th scope="col" class="text-center">USERS EMAIL</th>
+              <th scope="col">NAME</th>
+              <th scope="col" class="text-center">PHONE NUMBER</th>
               <th scope="col" class="text-center"> DESTINATION ADDRESS</th>
-              <th scope="col" class="text-center">QUANTITY </th>
-              <th scope="col" class="text-center">TOTAL PRICE</th>
+              <th scope="col" class="text-center">CITY </th>
               <th scope="col" class="text-center">STATUS</th>
             </tr>
           </thead>
+          <?php
+                  $sql = "SELECT * FROM shipping_details WHERE sta_tus='OFF' ORDER BY id desc";
+                  $stmt = $connecting->query($sql);
+                  $i = 0;
+                  while($data = $stmt->fetch()){
+                  $id = $data["id"];
+                  $fandl = $data['fandl'];
+                  $add = $data['add_ress'];
+                  $phone = $data['phone'];
+                  $city = $data['city'];
+
+                  $i++;
+              ?>
           <tbody>
             <tr>
-              <th scope="row">000001</th>
-              <td>629838</td>
-              <td>Night Robe</td>
-              <td class="text-center">Aoluwasegun009@gmail.com</td>
-              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
-              <td class="text-center">3</td>
-              <td class="text-center">#15,600</td>
-              <td><button class="btn btn-warning"  id="delete">Awaiting Confirmation</button></td>
+              <th scope="row"><?php echo htmlentities($i);?></th>
+              <td><?php echo htmlentities($fandl);?></td>  
+              <td class="text-center"><?php echo htmlentities($phone);?></td>
+              <td class="text-center"><?php echo htmlentities($add);?></td>
+              <td class="text-center"><?php echo htmlentities($city);?></td>
+              <td><a href="confirm.php?id=<?php echo $id;?>" class="btn btn-warning"  id="delete"> Confirm</a></td>
             </tr>
-            <tr>
-              <th scope="row">000002</th>
-              <td>629823</td>
-              <td>Night Gown</td>
-              <td class="text-center">Feranmi999@gmail.com</td>
-              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
-              <td class="text-center">3</td>
-              <td class="text-center">#15,600</td>
-              <td><button class="btn btn-warning"  id="delete">Awaiting Confirmation</button></td>
-            </tr>
-            <tr>
-              <th scope="row">000003</th>
-              <td>629458</td>
-              <td>T-Shirt</td>
-              <td class="text-center">Kenny9@gmail.com</td>
-              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
-              <td class="text-center">3</td>
-              <td class="text-center">#15,600</td>
-              <td><button class="btn btn-warning"  id="delete">Awaiting Confirmation</button></td>
-            </tr>
-  
-            <tr>
-              <th scope="row">000004</th>
-              <td>629838</td>
-              <td>Night Robe</td>
-              <td class="text-center">Aoluwasegun009@gmail.com</td>
-              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
-              <td class="text-center">3</td>
-              <td class="text-center">#15,600</td>
-              <td><button class="btn btn-warning"  id="delete">Awaiting Confirmation</button></td>
-            </tr>
-  
-            <tr>
-              <th scope="row">000005</th>
-              <td>629838</td>
-              <td>Night Robe</td>
-              <td class="text-center">Aoluwasegun009@gmail.com</td>
-              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
-              <td class="text-center">3</td>
-              <td class="text-center">#15,600</td>
-              <td><button class="btn btn-warning"  id="delete">Awaiting Confirmation</button></td>
+            </td>
   
           </tbody>
+                  <?php  } ?>
         </table>
   
   </div>
@@ -415,68 +385,38 @@ if (isset($_POST['submit'])){
           <thead>
             <tr>
               <th scope="col"> S/N</th>
-              <th scope="col">PRODUCT ID</th>
-              <th scope="col">PRODUCT NAME</th>
-              <th scope="col" class="text-center">USERS EMAIL</th>
+              <th scope="col">NAME</th>
+              <th scope="col" class="text-center">PHONE NUMBER</th>
               <th scope="col" class="text-center"> DESTINATION ADDRESS</th>
-              <th scope="col" class="text-center">QUANTITY </th>
-              <th scope="col" class="text-center">TOTAL PRICE</th>
+              <th scope="col" class="text-center">CITY </th>
               <th scope="col" class="text-center">STATUS</th>
             </tr>
           </thead>
+          <?php
+                  $sql = "SELECT * FROM shipping_details WHERE sta_tus='ON' ORDER BY id desc";
+                  $stmt = $connecting->query($sql);
+                  $i = 0;
+                  while($data = $stmt->fetch()){
+                  $id = $data["id"];
+                  $fandl = $data['fandl'];
+                  $add = $data['add_ress'];
+                  $phone = $data['phone'];
+                  $city = $data['city'];
+
+                  $i++;
+              ?>
           <tbody>
             <tr>
-              <th scope="row">000001</th>
-              <td>629838</td>
-              <td>Night Robe</td>
-              <td class="text-center">Aoluwasegun009@gmail.com</td>
-              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
-              <td class="text-center">3</td>
-              <td class="text-center">#15,600</td>
-              <td><button class="btn btn-success"  id="delete">Confirmed</button></td>
-            </tr>
             <tr>
-              <th scope="row">000001</th>
-              <td>629838</td>
-              <td>Night Robe</td>
-              <td class="text-center">Aoluwasegun009@gmail.com</td>
-              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
-              <td class="text-center">3</td>
-              <td class="text-center">#15,600</td>
-              <td><button class="btn btn-success"  id="delete">Confirmed</button></td>
+              <th scope="row"><?php echo htmlentities($i);?></th>
+              <td><?php echo htmlentities($fandl);?></td>  
+              <td class="text-center"><?php echo htmlentities($phone);?></td>
+              <td class="text-center"><?php echo htmlentities($add);?></td>
+              <td class="text-center"><?php echo htmlentities($city);?></td>
+              <td><p>Confirmed</p></td>
             </tr>
-            <tr>
-              <th scope="row">000001</th>
-              <td>629838</td>
-              <td>Night Robe</td>
-              <td class="text-center">Aoluwasegun009@gmail.com</td>
-              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
-              <td class="text-center">3</td>
-              <td class="text-center">#15,600</td>
-              <td><button class="btn btn-success"  id="delete">Confirmed</button></td>
-            </tr>
-  
-            <tr>
-              <th scope="row">000001</th>
-              <td>629838</td>
-              <td>Night Robe</td>
-              <td class="text-center">Aoluwasegun009@gmail.com</td>
-              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
-              <td class="text-center">3</td>
-              <td class="text-center">#15,600</td>
-              <td><button class="btn btn-success"  id="delete">Confirmed</button></td>
-            </tr>
-  
-            <tr>
-              <th scope="row">000001</th>
-              <td>629838</td>
-              <td>Night Robe</td>
-              <td class="text-center">Aoluwasegun009@gmail.com</td>
-              <td class="text-center">Yoaco, Lautech Ogbomoso.</td>
-              <td class="text-center">3</td>
-              <td class="text-center">#15,600</td>
-              <td><button class="btn btn-success"  id="delete">Confirmed</button></td>
           </tbody>
+                  <?php } ?>
         </table>
   
   </div>

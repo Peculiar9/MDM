@@ -4,7 +4,7 @@ require_once('include/functions.php');
 require_once('include/session.php');
 ?>
 <?php
-if(isset($_SESSION['user_id'])){
+if(isset($_SESSION['user_id_session'])){
   Redirect_to('admin_dashboard.php');
 }
 
@@ -18,7 +18,7 @@ if (isset($_POST['submit'])){
         // Call Out Function
         $found_account = Login_attempt_for_admin($username,$password);
         if($found_account){
-            $_SESSION['user_id'] = $found_account['id'];
+            $_SESSION['user_id_session'] = $found_account['id'];
             $_SESSION['username'] = $found_account['username'];
             // $_SESSION['aname'] = $found_account['aname'];
             $_SESSION['SuccessMessage']= "Welcome ".$_SESSION['username'];

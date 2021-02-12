@@ -100,7 +100,7 @@ function Login_attempt_for_admin($username,$password){
 }
 
 function Confirm_login() {
-    if(isset($_SESSION['user_id'])){
+    if(isset($_SESSION['user_id_session'])){
         return true;
     }else{
         $_SESSION['ErrorMessage']='Login Required!';
